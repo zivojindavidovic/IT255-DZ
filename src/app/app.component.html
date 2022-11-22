@@ -1,0 +1,18 @@
+<form class="add-room">
+  <h3>Dodaj sobu</h3>
+  <div class="field">
+    <label for="type">Tip sobe:</label>
+    <input type="text" id="type" #roomtype>
+  </div>
+  <div class="field">
+    <label for="floor">Sprat:</label>
+    <input type="text" id="floor" #floor>
+  </div>
+  <button (click)="addRoom(roomtype, floor)">
+    Dodaj sobu
+  </button>
+</form>
+
+<div class="show-room">
+  <app-room *ngFor="let room of rooms" [room]="room"></app-room>
+</div>

@@ -1,0 +1,13 @@
+.container{
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.title{
+    background-color: gray;
+    padding: 5px;
+    text-transform: uppercase;
+    color: white;
+}
