@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { RoomComponent } from './room/room.component';
 import { BarcomponentComponent } from './barcomponent/barcomponent.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DiComponent } from './di/di.component';
+import { RoomServiceService } from './services/room-service.service';
+import { Room } from './models/room';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomComponent,
-    BarcomponentComponent
+    BarcomponentComponent,
+    DiComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [RoomServiceService, Room],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
