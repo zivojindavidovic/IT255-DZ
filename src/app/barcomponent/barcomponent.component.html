@@ -7,34 +7,35 @@
 </div>
 <br>
 
+<div class="table">
+    <h3>Ponude ili preporuke</h3>
 
-<h3>Ponude ili preporuke</h3>
-
-<div *ngIf="aboutUs; else elseBlock">
-    <table>
-        <tr>
-            <th>Naziv</th>
-            <th>Opis</th>
-            <th>Cena</th>
-        </tr>
-        <tr>
-            <td>{{this.info.naziv}}</td>
-            <td>{{this.info.opis}}</td>
-            <td>{{this.info.cena}}</td>
-        </tr>
-    </table>
+    <div *ngIf="aboutUs; else elseBlock">
+        <table>
+            <tr>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Cena</th>
+            </tr>
+            <tr>
+                <td>{{this.info.naziv}}</td>
+                <td>{{this.info.opis}}</td>
+                <td>{{this.info.cena}}</td>
+            </tr>
+        </table>
+    </div>
+    <ng-template #elseBlock>
+        <table>
+            <tr>
+                <th>Vlasnik</th>
+                <th>Lokacija</th>
+                <th>Godina osnivanja</th>
+            </tr>
+            <tr>
+                <td>{{this.info.vlasnik}}</td>
+                <td>{{this.info.lokacija}}</td>
+                <td>{{this.info.godinaOsnivanja}}</td>
+            </tr>
+        </table>
+    </ng-template>
 </div>
-<ng-template #elseBlock>
-    <table>
-        <tr>
-            <th>Vlasnik</th>
-            <th>Lokacija</th>
-            <th>Godina osnivanja</th>
-        </tr>
-        <tr>
-            <td>{{this.info.vlasnik}}</td>
-            <td>{{this.info.lokacija}}</td>
-            <td>{{this.info.godinaOsnivanja}}</td>
-        </tr>
-    </table>
-</ng-template>

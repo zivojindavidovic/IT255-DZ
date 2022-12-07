@@ -17,3 +17,7 @@
     display: block;
     margin: auto;
 }
+
+.add-room .field input[type=checkbox]{
+    width: 20px;
+}
