@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DiComponent } from './di/di.component';
 import { RoomServiceService } from './services/room-service.service';
 import { Room } from './models/room';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { Room } from './models/room';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [RoomServiceService, Room],
   bootstrap: [AppComponent]

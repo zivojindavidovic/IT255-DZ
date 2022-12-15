@@ -43,3 +43,58 @@
 <div class="di">
   <app-di></app-di>
 </div>
+
+<div class="http">
+
+<form action="" class="container mt-5 pt-5" [formGroup]="postForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="type">Tip</label>
+    <input type="text" class="form-control" formControlName="type" name="title">
+  </div>
+  <div class="form-group">
+    <label for="type">Sprat</label>
+    <input type="text" class="form-control" formControlName="floor" name="floor">
+  </div>
+  <div class="form-group">
+    <label for="type">Cena</label>
+    <input type="text" class="form-control" formControlName="price" name="price">
+  </div>
+  <div class="form-group">
+    <label for="type">ID</label>
+    <input type="text" class="form-control" formControlName="id" name="id">
+  </div>
+  <div class="col button-holder d-flex justify-content-center align-item-center mt-4">
+    <button class="btn btn-success" type="submit" name="submit">Dodaj</button>
+  </div>
+</form>
+
+</div>
+
+<div class="mt-5 pt-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tip</th>
+        <th scope="col">Sprat</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Get</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts, index as i;">        
+        <td scope="row">{{post.id}}</td>
+        <td scope="row">{{post.type}}</td>
+        <td scope="row">{{post.floor}}</td>
+        <td scope="row">{{post.price}}</td>
+        <td scope="row">
+          <button (click)="getPost(post.id)" type="button" class="btn btn-primary">Get Post</button>
+        </td>
+        <td scope="row">
+          <button (click)="deletePost(post.id)" type="button" class="btn btn-danger">Delete Post</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
