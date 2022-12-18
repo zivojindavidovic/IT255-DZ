@@ -1,0 +1,23 @@
+.add-room{
+    max-width: 400px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.add-room input{
+    display: block;
+    margin-bottom: 10px;
+    width: 98%;
+}
+
+.add-room button{
+    display: block;
+    margin: auto;
+}
+
+.add-room .field input[type=checkbox]{
+    width: 20px;
+}

@@ -1,23 +1,14 @@
-.add-room{
-    max-width: 400px;
-    margin: auto;
-    margin-top: 30px;
-    border: 1px solid gray;
-    border-radius: 2px;
+div{
+    text-align: center;
+}
+a{
     padding: 10px;
+    margin-right: 10px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
 }
 
-.add-room input{
-    display: block;
-    margin-bottom: 10px;
-    width: 98%;
-}
-
-.add-room button{
-    display: block;
-    margin: auto;
-}
-
-.add-room .field input[type=checkbox]{
-    width: 20px;
+a:hover{
+    background-color: rgb(167, 167, 167);
 }

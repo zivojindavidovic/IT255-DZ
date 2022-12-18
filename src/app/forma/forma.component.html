@@ -1,0 +1,39 @@
+
+<form [formGroup]="hotelsForm" class="add-room">
+    <h3>Dodaj sobu</h3>
+    <div class="field">
+      <label for="type">Tip sobe:</label>
+      <input type="text" id="type" #roomtype formControlName="type">
+    </div>
+    <div *ngIf="hotelsForm.controls['type'].invalid && (hotelsForm.controls['type'].dirty || hotelsForm.controls['type'].touched)">
+      <div *ngIf="$any(hotelsForm.controls['type']).errors.required">
+        <p>Tip sobe nije Validan</p>
+      </div>    
+      <div *ngIf="$any(hotelsForm.controls['type']).errors?.['minlength']">      
+        <p>Mora da ima min 6 karaktera</p>
+      </div>
+    </div>
+    <div class="field">
+      <label for="floor">Sprat:</label>
+      <input type="text" id="floor" #floor>
+    </div>
+    <div class="field">
+      <input type="checkbox" (click)="klimaValue = 'klima'" id="klima">
+      <label for="klima">Klima</label>
+      <input type="checkbox" (click)="barValue = 'bar' " id="bar">
+      <label for="bar">Mini Bar</label>
+      <input type="checkbox" (click)="saunaValue = 'sauna'" id="sauna">
+      <label for="sauna">Sauna</label>
+    </div>
+    <div  *ngIf="klimaValue === 'klima'">Klima je selektovana, racun uvecan za X dinara</div>
+    <div  *ngIf="barValue === 'bar'">Mini Bar je selektovan, racun uvecan za X dinara</div>
+    <div  *ngIf="saunaValue === 'sauna'">Sauna je selektovana, racun uvecan za X dinara</div>
+  
+    <button (click)="addRoom(roomtype, floor)">
+      Dodaj sobu
+    </button>
+  </form>
+  
+  <div class="show-room">
+    <app-room *ngFor="let room of rooms" [room]="room"></app-room>
+  </div>
