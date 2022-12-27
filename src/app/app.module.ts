@@ -14,6 +14,8 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { NewcomponentComponent } from './newcomponent/newcomponent.component';
 import { FormaComponent } from './forma/forma.component';
 import { RestComponent } from './rest/rest.component';
+import { ModelroomsComponent } from './modelrooms/modelrooms.component';
+import { RoomService } from './services/room.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -21,7 +23,8 @@ const routes: Routes = [
   {path: 'bar', component: BarcomponentComponent},
   {path: 'di', component: DiComponent},
   {path: 'forma', component: FormaComponent},
-  {path: 'rest', component: RestComponent}
+  {path: 'rest', component: RestComponent},
+  {path: 'pogled', component: ModelroomsComponent}
 
 ]
 
@@ -33,7 +36,8 @@ const routes: Routes = [
     DiComponent,
     NewcomponentComponent,
     FormaComponent,
-    RestComponent
+    RestComponent,
+    ModelroomsComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [RoomServiceService, Room],
+  providers: [RoomServiceService, Room, RoomService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
